@@ -1,0 +1,36 @@
+
+
+<h1>Veuillez remplir le formulaire ci-dessous</h1>
+<fieldset>
+    <legend>Informations générales</legend>
+    <form #f ="ngForm">
+        <div>
+            <mat-form-field floatLabel = "auto" hideRequiredMarker appearance = "outline">
+            <label mat-label>Nom  </label>
+            <input matInput required name="nom" type="text" [(ngModel)]  = "contact.nom"  >
+            <mat-hint align ="end">Le champs est obligatoire</mat-hint>
+        </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field floatLabel = "auto" hideRequiredMarker appearance = "outline">
+            <label mat-label>Prénom  </label>
+            <input matInput required name="prenom" type="text" [(ngModel)]  ="contact.prenom" >
+            <mat-hint align ="end">Le champs est obligatoire</mat-hint>
+            
+        </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field floatLabel = "auto" hideRequiredMarker appearance = "outline">
+            <label mat-label>Date de naissance </label>
+            <input matInput required name="datenaissance" type="date" [(ngModel)]  ="contact.datenaissance" >
+            <mat-hint align ="end">Le champs est obligatoire</mat-hint>
+      
+        </mat-form-field>
+        </div>
+    
+        <button mat-stroked-button  [disabled]="f.invalid" (click)="save()">Ajouter</button>
+        <button mat-stroked-button [routerLink]="['/Afficher']" >Afficher</button>
+    </form>
+</fieldset>  
+
+
